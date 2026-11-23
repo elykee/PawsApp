@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">PawsApp</string>
+
+    <!-- Textos de la App-->
+
+    <!-- Vista del Login-->
+    <string name="login_title">The app for pet lovers</string>
+    <string name="login_subtitle">Create an account</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">mrpaws@email.com</string>
+    <string name="pwd_label">Password</string>
+    <string name="pwd_hint">**************</string>
+    <string name="start_free_button">Get started for free!</string>
+    <string name="login_question">Already have an account?</string>
+    <string name="login_button">Login</string>
+
+
+    <!-- Vista de Bienvenida-->
+    <string name="welcome_title">Welcome to Paws!</string>
+    <string name="pets">Pets</string>
+    <string name="husky">Latte</string>
+    <string name="border_collie">Milkshake</string>
+    <string name="galgo">Mozart</string>
+    <string name="shibainu">Bananas</string>
+    <string name="events">Events</string>
+    <string name="events_info">Add your first reminder, important date, appointment…</string>
+    <string name="for_you">For you</string>
+    <string name="tips">Tips</string>
+    <string name="news">News</string>
+    <string name="notification_alert">Complete your profile to personalize your experience</string>
+
+
+    <!-- Barra de Navegación Inferior -->
+    <string name="home">Home</string>
+    <string name="user">You</string>
+
+
+    <!-- BottomSheetDialogFragment Avatar -->
+    <string name="avatar_title">Choose an option</string>
+    <string name="camera_text">Take a picture</string>
+    <string name="gallery_text">Select from your gallery</string>
+    <string name="avatars_text">Browse avatars</string>
+
+    <!-- BottomSheetDialogFragment Avatars -->
+    <string name="avatars_title">Choose an avatar</string>
+    <string name="premium_text">Go premium to get more</string>
+
+    <!-- Pets Fragment -->
+    <string name="pets_title">My Pets</string>
+    <string name="pets_text">You can manage your pets or add new ones!</string>
+    <string name="pets_add">Add new</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Parte Eva 2  _________________________________________________________________________________________-->
+
+    // Añadiendo etiquetas semánticas para accesibilidad
+    //------------------------------------------------------------------------------------
+
+    <!-- Vista de Bienvenida-->
+    <string name="btn_notification">Clickable notification badge</string>
+    <string name="btn_user_avatar">Button to change user\'s avatar</string>
+
+    <!-- Pets Fragment -->
+    <string name="btn_mozart_profile">Button to view Mozart\'s Profile.</string>
+    <string name="btn_milkshake_profile">Button to view Milkshake\'s Profile.</string>
+    <string name="btn_latte_profile">Button to view Latte\'s profile</string>
+    <string name="btn_banana_profile">Button to view Banana\'s profile</string>
+    <string name="bnt_add_pet">Button to add a new pet.</string>
+
+    <!-- BottomSheetDialogFragment Avatar -->
+    <string name="btn_close">Button to close options window</string>
+
+    <!-- BottomSheetDialogFragment Avatars -->
+    <string name="bnt_avatar2">Button avatar 2</string>
+    <string name="btn_avatar3">Button avatar 3</string>
+    <string name="btn_avatar_bordercollie">Button avatar border collie</string>
+    <string name="btn_avatar1">Button avatar 1</string>
+    <string name="btn_avatar_shibainu">Button avatar shiba inu</string>
+    <string name="btn_close_avatars">Button close options window.</string>
+
+    //--------------------------------------------------------------------------------------
+
+    // Nuevo Fragment implementando RadioButtons, AutoCompleteTextView, DatePickerDialog e Interactive Input (SWIPE / DESLIZAR)
+    <!-- Pet's Profile Fragment-->
+    <string name="pet_profile_title">Pet\'s Profile Creation</string>
+    <string name="pet_new_add">Add new pet</string>
+    <string name="pet_description">Add a short note or description</string>
+    <string name="label_name">Your pet\'s name</string>
+    <string name="label_birthday">Date of birth</string>
+    <string name="label_breed">Breed</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_weight">Weight</string>
+    <string name="btn_pet_profile_avatar">Button to change pet\'s avatar</string>
+    <string name="btn_create_pet_profile">Create Profile</string>
+    <string name="milkshake_name">Milkshake</string>
+    <string name="breed_hint">Labrador</string>
+    <string name="hint_birth">05/09/2025</string>
+    <string name="btn_calendar">Button select date of birth</string>
+    <string name="hint_gender">Choose gender</string>
+    <string name="hint_weight">0.00 Kg</string>
+    <string name="btn_arrow_back">Go back arrow button</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="btn_weight">Drag button right or left to select weight.</string>
+
+    <string-array name="Breeds">
+        <item>Akita</item>
+        <item>Alaskan Malamute</item>
+        <item>Australian Shepherd</item>
+        <item>Australian Terrier</item>
+        <item>Basset</item>
+        <item>Beagle</item>
+        <item>Bernese Mountain</item>
+        <item>Border Collie</item>
+        <item>Bulldog</item>
+        <item>Chihuahua</item>
+        <item>Chow Chow</item>
+        <item>Dachshund</item>
+        <item>Dalmatian</item>
+        <item>Dobermann</item>
+        <item>English Cocker Spaniel</item>
+        <item>French Bulldog</item>
+        <item>German Shepherd</item>
+        <item>Golden Retriever</item>
+        <item>Great Dane</item>
+        <item>Greyhound</item>
+        <item>Jack Russell Terrier</item>
+        <item>Labrador Retriever</item>
+        <item>Maltese</item>
+        <item>Newfoundland</item>
+        <item>Papillon</item>
+        <item>Pomeranian</item>
+        <item>Poodle</item>
+        <item>Pug</item>
+        <item>Rottweiler</item>
+        <item>Saint Bernard</item>
+        <item>Samoyed</item>
+        <item>Schnauzer</item>
+        <item>Shiba Inu</item>
+        <item>Siberian Husky</item>
+        <item>Yorkshire Terrier</item>
+    </string-array>
+
+
+    <!--____________________________________________________________________________________________________________-->
+
+</resources>

@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PawsApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!--  Fondo gris base para todas las activities -->
+        <item name="android:windowBackground">@color/bg_color</item>
+
+        <!-- Aplicar fullscreen mode -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <style name="Theme.PawsApp" parent="Base.Theme.PawsApp" />
+
+    <!-- Splash screen theme -->
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+
+        <!-- Fondo inicial con logo pequeño -->
+        <item name="windowSplashScreenBackground">@color/yellow</item>
+        <!-- Logo pequeño -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/pawslogosmall</item>
+        <!-- Cambio de tema/estilp después del Splash -->
+        <item name="postSplashScreenTheme">@style/Base.Theme.PawsApp</item>
+    </style>
+
+    <!-- Estilo para el Floating Notification DialogFragment -->
+    <style name="DialogSlideAnimation" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Estilo para el pet_avatar una vez seleccionado una imagen por el usuario -->
+    <style name="CircleAvatarStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

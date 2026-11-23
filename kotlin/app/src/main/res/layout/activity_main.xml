@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--  Vista del fondo para la transición de color -->
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow" />
+
+    <!-- Logo pequeño (vista inicial)-->
+    <ImageView
+        android:id="@+id/small_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/pawslogosmall" />
+
+    <!-- Logo grande (inicialmente invisible)  -->
+    <ImageView
+        android:id="@+id/big_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0"
+        android:src="@drawable/pawslogobig" />
+
+    <!-- Contenido de la vista sign-up/login (inicialmente oculto) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Fondo anarillo superior -->
+        <View
+            android:id="@+id/bg_shape_top"
+            android:layout_width="724dp"
+            android:layout_height="362dp"
+            android:background="@drawable/background_shape"
+            android:clipToOutline="true"
+            android:translationY="-205dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Fondo amarillo inferior-->
+        <View
+            android:id="@+id/bg_shape_bottom"
+            android:layout_width="724dp"
+            android:layout_height="362dp"
+            android:background="@drawable/background_shape"
+            android:translationY="240dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@id/drawing_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--  Imagen decorativa en el sign-up/login -->
+        <ImageView
+            android:id="@+id/drawing_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp"
+            android:src="@drawable/drawing_login"
+            app:layout_constraintBottom_toTopOf="@+id/login_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Header h1 -->
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:gravity="center"
+            android:text="@string/login_title"
+            android:textColor="@color/txt_primary_color"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drawing_login"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Header h2 -->
+        <TextView
+            android:id="@+id/login_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="@string/login_subtitle"
+            android:textColor="@color/txt_primary_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_title" />
+
+        <!-- Formulario de Registro Simplificado -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/login_fields_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_subtitle">
+
+            <TextView
+                android:id="@+id/email_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_label"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/hint_color"
+                android:textColor="@color/bg_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_label" />
+
+            <TextView
+                android:id="@+id/pwd_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/pwd_label"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <EditText
+                android:id="@+id/etPwd"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:hint="@string/pwd_hint"
+                android:inputType="textPassword"
+                android:paddingEnd="50dp"
+                android:paddingStart="16dp"
+                android:textColorHint="@color/hint_color"
+                android:textColor="@color/bg_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pwd_label" />
+
+            <!-- Parte Eva 2: Botón añadido ________________________________________________________-->
+            <ImageButton
+                android:id="@+id/btnEye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_eye"
+                android:padding="12dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="@id/etPwd"
+                app:layout_constraintEnd_toEndOf="@id/etPwd"
+                app:layout_constraintTop_toTopOf="@id/etPwd" />
+            <!--____________________________________________________________________________________-->
+
+            <!-- Botón registro, intent a la activity de inicio (StartFreeActivity) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startFreeButton"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/yellow"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="15dp"
+                android:text="@string/start_free_button"
+                android:textColor="@color/bg_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPwd" />
+
+            <TextView
+                android:id="@+id/loginQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:text="@string/login_question"
+                android:textColor="@color/bg_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/startFreeButton" />
+
+            <!-- Botón Login -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:backgroundTint="@color/login_button_color"
+                android:text="@string/login_button"
+                android:textColor="@color/bg_color"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="15dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginQuestion" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

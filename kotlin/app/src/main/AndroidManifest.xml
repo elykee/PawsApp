@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ek.pawsapp">
+
+    <!--    &lt;!&ndash; Permisos &ndash;&gt;-->
+    <!--    &lt;!&ndash; Permiso para usar la cámara. Se solicitará en tiempo de ejecución, no al instalar la app. &ndash;&gt;-->
+    <!--    <uses-permission android:name="android.permission.CAMERA" />-->
+    <!--    &lt;!&ndash; Declaramos que la cámara es opcional. Si un dispositivo no tiene cámara, igualmente podrá instalar la aplicación sin ser excluido de Google Play. &ndash;&gt;-->
+    <!--    <uses-feature-->
+    <!--        android:name="android.hardware.camera"-->
+    <!--        android:required="false" />-->
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PawsApp">
+
+        <!-- Activity secundaria -->
+        <activity
+            android:name=".StartFreeActivity"
+            android:exported="true" />
+
+        <!-- Activity principal (pantalla de inicio y splash screen) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.SplashScreen">
+
+            <!-- Filtro para que esta Activity sea el punto de entrada de la aplicación -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FileProvider para guardar fotos temporales de la cámara -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

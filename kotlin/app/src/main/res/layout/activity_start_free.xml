@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenedor de fragments que se reemplazarán según la navegación-->
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/custom_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Línea divisoria superior de la barra de navagación (decoración)-->
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="0dp"
+        android:layout_height="0.85dp"
+        android:background="@color/login_button_color"
+        app:layout_constraintBottom_toTopOf="@id/custom_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_container" />
+
+    <!--Barra de Navegación Inferior Personalizada-->
+    <LinearLayout
+        android:id="@+id/custom_bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="86dp"
+        android:background="@color/nav_bg_color"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_divider">
+
+        <!-- Botón Home -->
+        <LinearLayout
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--  Icono botón Home-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_button_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp">
+
+                <View
+                    android:id="@+id/home_button"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/nav_item_selected_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/nav_home_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/nav_home_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home"
+                    app:layout_constraintBottom_toBottomOf="@id/home_button"
+                    app:layout_constraintEnd_toEndOf="@id/home_button"
+                    app:layout_constraintStart_toStartOf="@id/home_button"
+                    app:layout_constraintTop_toTopOf="@id/home_button"
+                    app:tint="@color/nav_icon_color_selector" />
+
+                <TextView
+                    android:id="@+id/nav_home_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home"
+                    android:textColor="@color/nav_icon_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/home_button_container"
+                    app:layout_constraintEnd_toEndOf="@id/home_button_container"
+                    app:layout_constraintStart_toStartOf="@id/home_button_container"
+                    app:layout_constraintTop_toBottomOf="@id/home_button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!-- Botón Pets -->
+        <LinearLayout
+            android:id="@+id/nav_pets"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--  Icono botón Pets-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pets_button_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp">
+
+                <View
+                    android:id="@+id/pets_button"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/nav_item_selected_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/nav_pets_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/nav_pets_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pets"
+                    app:layout_constraintBottom_toBottomOf="@id/pets_button"
+                    app:layout_constraintEnd_toEndOf="@id/pets_button"
+                    app:layout_constraintStart_toStartOf="@id/pets_button"
+                    app:layout_constraintTop_toTopOf="@id/pets_button"
+                    app:tint="@color/nav_icon_color_selector" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pets"
+                    android:textColor="@color/nav_icon_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/pets_button_container"
+                    app:layout_constraintEnd_toEndOf="@id/pets_button_container"
+                    app:layout_constraintStart_toStartOf="@id/pets_button_container"
+                    app:layout_constraintTop_toBottomOf="@id/pets_button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!-- Botón Events -->
+        <LinearLayout
+            android:id="@+id/nav_events"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/events_button_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp">
+
+                <View
+                    android:id="@+id/events_button"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/nav_item_selected_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/nav_events_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/nav_events_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/events"
+                    app:layout_constraintBottom_toBottomOf="@id/events_button"
+                    app:layout_constraintEnd_toEndOf="@id/events_button"
+                    app:layout_constraintStart_toStartOf="@id/events_button"
+                    app:layout_constraintTop_toTopOf="@id/events_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/events"
+                    android:textColor="@color/nav_icon_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/events_button_container"
+                    app:layout_constraintEnd_toEndOf="@id/events_button_container"
+                    app:layout_constraintStart_toStartOf="@id/events_button_container"
+                    app:layout_constraintTop_toBottomOf="@id/events_button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!-- Botón You -->
+        <LinearLayout
+            android:id="@+id/nav_you"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_button_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp">
+
+                <View
+                    android:id="@+id/user_button"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/nav_item_selected_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/nav_you_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/nav_you_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user"
+                    app:layout_constraintBottom_toBottomOf="@id/user_button"
+                    app:layout_constraintEnd_toEndOf="@id/user_button"
+                    app:layout_constraintStart_toStartOf="@id/user_button"
+                    app:layout_constraintTop_toTopOf="@id/user_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user"
+                    android:textColor="@color/nav_icon_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/user_button_container"
+                    app:layout_constraintEnd_toEndOf="@id/user_button_container"
+                    app:layout_constraintStart_toStartOf="@id/user_button_container"
+                    app:layout_constraintTop_toBottomOf="@id/user_button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

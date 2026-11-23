@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Parte Eva 2 ________________________________________________________________________________________-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PetProfileCreationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Fondo amarillo superior -->
+        <View
+            android:id="@+id/bg_shape_top"
+            android:layout_width="724dp"
+            android:layout_height="362dp"
+            android:background="@drawable/background_shape"
+            android:translationY="-215dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Header h1 -->
+        <TextView
+            android:id="@+id/pet_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/pet_profile_title"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/btn_arrow_back"
+            android:paddingVertical="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="30dp"
+            android:src="@drawable/ic_backarrow"
+            app:layout_constraintBottom_toBottomOf="@id/pet_profile_title"
+            app:layout_constraintEnd_toStartOf="@id/pet_profile_title"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pet_profile_title" />
+
+        <!-- Botón avatar -->
+        <FrameLayout
+            android:id="@+id/avatar_button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/bnt_add_pet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_profile_title">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/pet_avatar_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pet_add"
+                android:scaleType="centerCrop"
+                android:importantForAccessibility="no"
+                app:shapeAppearanceOverlay="@style/CircleAvatarStyle" />
+
+            <ImageView
+                android:id="@+id/plus_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_plus" />
+
+        </FrameLayout>
+
+        <!-- Header h2 -->
+        <TextView
+            android:id="@+id/pet_add_text"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="10dp"
+            android:text="@string/pet_new_add"
+            android:textAlignment="center"
+            android:textColor="@color/txt_primary_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatar_button_container" />
+
+        <ImageView
+            android:id="@+id/add_description_icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toStartOf="@id/pet_add_description"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pet_add_description"
+            app:tint="@color/nav_icon_color" />
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/pet_add_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="10dp"
+            android:text="@string/pet_description"
+            android:textColor="@color/txt_primary_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/add_description_icon"
+            app:layout_constraintTop_toBottomOf="@id/pet_add_text" />
+
+
+        <!-- Formulario datos mascota -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pet_fields_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_add_description">
+
+            <!-- Label 1 Pet Name -->
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_name"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etPetName"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:hint="@string/milkshake_name"
+                android:inputType="text"
+                android:textColor="@color/bg_color"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_name" />
+
+            <!-- Label 2 Birthday Calendar DatePickerDialog-->
+            <TextView
+                android:id="@+id/label_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_birthday"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPetName" />
+
+            <EditText
+                android:id="@+id/etPetBirth"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:hint="@string/hint_birth"
+                android:inputType="none"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:textColor="@color/bg_color"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_birth" />
+
+            <ImageButton
+                android:id="@+id/btnCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/btn_calendar"
+                android:padding="12dp"
+                android:src="@drawable/ic_calendar"
+                app:layout_constraintBottom_toBottomOf="@id/etPetBirth"
+                app:layout_constraintEnd_toEndOf="@id/etPetBirth"
+                app:layout_constraintTop_toTopOf="@id/etPetBirth" />
+
+            <!-- Label 3 AutoCompleteTextView-->
+            <TextView
+                android:id="@+id/label_breed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_breed"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPetBirth" />
+
+            <AutoCompleteTextView
+                android:id="@+id/etBreed"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:dropDownHeight="200dp"
+                android:dropDownVerticalOffset="2dp"
+                android:dropDownSelector="@color/login_button_color"
+                android:hint="@string/breed_hint"
+                android:textColor="@color/bg_color"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_breed" />
+
+            <!-- Label 4 Radio Buttons -->
+            <TextView
+                android:id="@+id/label_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_gender"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etBreed" />
+
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_gender">
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="75dp"
+                    android:text="@string/female"
+                    android:textColor="@color/txt_primary_color"
+                    android:textSize="14sp"
+                    app:buttonTint="@color/login_button_color" />
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:textColor="@color/txt_primary_color"
+                    android:textSize="14sp"
+                    app:buttonTint="@color/login_button_color" />
+
+            </RadioGroup>
+
+
+            <!-- Label 5 Interactive Input (SWIPE / DESLIZAR) -->
+            <TextView
+                android:id="@+id/label_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_weight"
+                android:textColor="@color/txt_primary_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rgGender" />
+
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_border"
+                android:hint="@string/hint_weight"
+                android:inputType="numberDecimal"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:textColor="@color/bg_color"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_weight" />
+
+
+            <ImageButton
+                android:id="@+id/btnWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/btn_weight"
+                android:padding="12dp"
+                android:rotation="90"
+                android:src="@drawable/ic_weight"
+                app:layout_constraintBottom_toBottomOf="@id/etWeight"
+                app:layout_constraintEnd_toEndOf="@id/etWeight"
+                app:layout_constraintTop_toTopOf="@id/etWeight" />
+
+            <!-- Botón Create Profile -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/createPetProfile"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/yellow"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                android:text="@string/btn_create_pet_profile"
+                android:textColor="@color/bg_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etWeight" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+    <!--_____________________________________________________________________________________________________-->

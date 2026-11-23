@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottomsheet_bg"
+    android:paddingHorizontal="38dp"
+    android:paddingVertical="31dp">
+
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/avatar_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="70dp"
+        android:paddingEnd="40dp"
+        android:text="@string/avatar_title"
+        android:textColor="@color/nav_icon_color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/close_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botón de cerrar esquina superior derecha -->
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/avatar_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/nav_icon_color"
+        android:contentDescription="@string/btn_close"/>
+
+
+    <!-- Opción 1: Cámara -->
+    <View
+        android:id="@+id/camera_button"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rectangle_button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar_title" />
+
+    <ImageView
+        android:id="@+id/camera_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintEnd_toEndOf="@id/camera_button"
+        app:layout_constraintStart_toStartOf="@id/camera_button"
+        app:layout_constraintTop_toTopOf="@id/camera_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        android:text="@string/camera_text"
+        android:textColor="@color/bg_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/camera_button"
+        app:layout_constraintStart_toStartOf="@id/camera_button"
+        app:layout_constraintTop_toBottomOf="@id/camera_icon" />
+
+    <!-- Opción 2: Galería -->
+    <View
+        android:id="@+id/gallery_button"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rectangle_button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/camera_button" />
+
+    <ImageView
+        android:id="@+id/gallery_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_gallery"
+        app:layout_constraintEnd_toEndOf="@id/gallery_button"
+        app:layout_constraintStart_toStartOf="@id/gallery_button"
+        app:layout_constraintTop_toTopOf="@id/gallery_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        android:text="@string/gallery_text"
+        android:textColor="@color/bg_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/gallery_button"
+        app:layout_constraintStart_toStartOf="@id/gallery_button"
+        app:layout_constraintTop_toBottomOf="@id/gallery_icon" />
+
+    <!-- Opción 3: Avatares-->
+    <View
+        android:id="@+id/avatars_button"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rectangle_button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gallery_button" />
+
+    <ImageView
+        android:id="@+id/pets_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_pets"
+        app:layout_constraintEnd_toEndOf="@id/avatars_button"
+        app:layout_constraintStart_toStartOf="@id/avatars_button"
+        app:layout_constraintTop_toTopOf="@id/avatars_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        android:text="@string/avatars_text"
+        android:textColor="@color/bg_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/avatars_button"
+        app:layout_constraintStart_toStartOf="@id/avatars_button"
+        app:layout_constraintTop_toBottomOf="@id/pets_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
